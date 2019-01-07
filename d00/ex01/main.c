@@ -1,8 +1,3 @@
-#include <stdio.h> //printf, scanf, ...
-#include <string.h> //memcpy, strlen, ...
-#include <unistd.h> //fork, write, sleep...
-#include <stdlib.h> //malloc, free, exit...
-
 #include "header.h"
 
 int main(void)
@@ -14,6 +9,14 @@ int main(void)
 	/*-------------------
 	launch your test here
 	--------------------*/
+
+    //sort the array
+    sortArts(arts);
+
+    //print sorted array
+    for (int i = 0; arts[i]; i++) {
+        printf("%s => %d\n", arts[i]->name, arts[i]->price);
+    }
 
 	return (0);
 }
@@ -150,7 +153,7 @@ struct s_art **getArts(void)
 	for(int i = 0; tab[i]; i++){
 		tmp = getArts_createStruct(strdup(tab[i]));
 		if (tmp)
-			art[(art_index++)] = tmp; 
+			art[(art_index++)] = tmp;
 	}
 	art[(art_index)] = NULL;
 

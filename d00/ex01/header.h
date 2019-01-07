@@ -1,5 +1,9 @@
 #ifndef HEADER_H
 # define HEADER_H
+#include <stdio.h> //printf, scanf, ...
+#include <string.h> //memcpy, strlen, ...
+#include <unistd.h> //fork, write, sleep...
+#include <stdlib.h> //malloc, free, exit...
 
 /*--------------------------------
   !! required structure
@@ -18,7 +22,7 @@ struct s_art {
 void  sortArts(struct s_art **arts);
 
 /*--------------------------------
-  ?? test function used in main 
+  ?? test function used in main
   --------------------------------*/
 
 struct s_art **getArts(void);
