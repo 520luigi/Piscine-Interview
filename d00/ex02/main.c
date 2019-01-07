@@ -1,8 +1,3 @@
-#include <stdio.h> //printf, scanf, ...
-#include <string.h> //memcpy, strlen, ...
-#include <unistd.h> //fork, write, sleep...
-#include <stdlib.h> //malloc, free, exit...
-
 #include "header.h"
 
 int main(void)
@@ -14,7 +9,9 @@ int main(void)
 	/*-------------------
 	launch your test here
 	--------------------*/
-	//printf("price for the art \'%s\' is %d\n", "Guernica", searchPrice(arts, "Guernica"));
+	printf("price for the art \'%s\' is %d\n", "Guernica", searchPrice(arts, n, "Guernica"));
+    printf("price for the art \'%s\' is %d\n", "Mona Lisa", searchPrice(arts, n, "Mona Lisa"));
+    printf("price for the art \'%s\' is %d\n", "I don't exist", searchPrice(arts, n, "I don't exist"));
 
 	return (0);
 }
@@ -154,7 +151,7 @@ struct s_art **getArts(int *n)
 	for(int i = 0; tab[i]; i++){
 		tmp = getArts_createStruct(strdup(tab[i]));
 		if (tmp)
-			art[(art_index++)] = tmp; 
+			art[(art_index++)] = tmp;
 	}
 	art[(art_index)] = NULL;
 	for (int i = 0; tab[i] ; i++){
